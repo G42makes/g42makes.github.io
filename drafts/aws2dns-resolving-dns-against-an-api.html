@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>G42Makes</title>
+        <title>AWS2DNS: Resolving DNS against an API</title>
         <link rel="stylesheet" href="http://g42makes.github.io/theme/css/main.css" />
 </head>
 
@@ -10,13 +10,17 @@
         <header id="banner" class="body">
                 <h1><a href="http://g42makes.github.io/">G42Makes </a></h1>
                 <nav><ul>
-                    <li><a href="http://g42makes.github.io/category/python.html">Python</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://g42makes.github.io/drafts/aws2dns-resolving-dns-against-an-api.html" rel="bookmark"
+           title="Permalink to AWS2DNS: Resolving DNS against an API">AWS2DNS: Resolving DNS against an API</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://g42makes.github.io/aws2dns-resolving-dns-against-an-api.html">AWS2DNS: Resolving DNS against an API</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2019-06-19T10:00:00-04:00">
                 Published: Wed 19 June 2019
@@ -27,7 +31,7 @@
         </address>
 <p>In <a href="http://g42makes.github.io/category/python.html">Python</a>.</p>
 <p>tags: <a href="http://g42makes.github.io/tag/python.html">python</a> <a href="http://g42makes.github.io/tag/aws.html">AWS</a> <a href="http://g42makes.github.io/tag/dns.html">DNS</a> </p>
-</footer><!-- /.post-info --><h2>Introduction</h2>
+</footer><!-- /.post-info -->      <h2>Introduction</h2>
 <p>Recently, two situations came together:</p>
 <ol>
 <li>I discovered the <code>CanonicalDomains</code> option for my <code>~/.ssh/config</code> file</li>
@@ -66,12 +70,15 @@ We will work backwards here, as is tradition in the DNS.</p>
 <p>With the public IP/DNS requests, if they are not configured you will get back a NXDOMAIN result(non-existing domain).</p>
 <h2>SSH</h2>
 <p>The way I designed this to work for me, was to enable quick SSH into a host by instance ID, <code>ssh i-01234567890</code>. This required some reasonable changes to the <code>~/.ssh/config</code> file on my system, which are documented/exampled in the <a href="https://github.com/G42makes/AWS2DNS/blob/master/sshconfig">sshconfig</a> file of the repo.</p>
-<h3>DNS Configuration</h3>
+<h3>DNS Server</h3>
 <p>SSH needed to talk to this DNS server, and since it can forward to your normal SSH server, I just set the DNS setting(on my Mac I used a new network Location) to localhost. All queries to <code>dns.aws</code> are resolved locally, the rest are just fowarded. Now my SSH config works perfectly.</p>
 <h2>Going Forward</h2>
 <p>For me, I mostly did this to see if I could. I had basically already gotten past the point where I needed this in my work. I decided to write it anyway, and post it online just to see if anyone wants to take it further. Pull Requests will happily be reviewed and ownership can be passed on if you really want to run with this.</p>
-<p>For now, at least, I will not be making any real changes.</p>                </article>
-            </aside><!-- /#featured -->
+<p>For now, at least, I will not be making any real changes.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>
